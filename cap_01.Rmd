@@ -1,0 +1,66 @@
+---
+title: "cap01_material_basico"
+author: "FVB"
+date: "7 de enero de 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# MATERIAL BÁSICO PARA DESARROLLAR UN PROYECTO CON ARDUINO
+
+Imagino que ya sabrás qué es Arduino por lo que en este curso nos centraremos en cómo utilizar en entornos industriales placas Arduino y los PLCs basados en Arduino para realizar proyectos un 30% más rápido.
+
+Utilizando diferentes herramientas simples conseguirás sacar un alto rendimiento a la programación de Arduino y a la creación de proyectos con Arduino. El tiempo en un proyecto industrial es dinero por lo que te vamos a mostrar cómo ahorrar un 30% de tu tiempo.
+
+ 1. Verifica y evalúa las diferentes variables y señales conectadas a tu PLC con una interfaz gráfica.
+ 1. Utiliza ejemplos ya creados para no tener que empezar desde cero. (Si, ejemplos, no hace falta que el código inicial sea tuyo.  Existen muchos ejemplos válidos para desarrollar tu proyecto)
+ 3. Utiliza librerías para tus funciones estándar.
+
+(Recuerda: Para nosotros un PLC funciona cómo una placa Arduino. Nuestros PLCs utilizan placas Arduino originales por lo que puedes probar este curso utilizando placas Arduino originales).
+
+Prepara este material en tu ordenador para empezar el capítulo 1.  
+
+Utilizando una una simple plataforma gráfica se puede visualizar el estado del PLC cómodamente y de forma amigable. Esta también la puedes utilizar como SCADA en tu proyecto y lo podrás integrar en tus proyectos como interfaz Hombre-Maquina. Simple, fácil y sin coste. Te recomendamos utilizar una plataforma Open Source llamada [PROCESSING](https://www.processing.org/download/?processing). (El Arduino IDE se basa en esta plataforma por lo que te resultará muy familiar).
+
+
+## Instalar Arduino IDE
+
+Tenemos que ir a la página web oficial y descargar el programa según nuestro sistema operativo.
+
+https://www.arduino.cc/en/Main/Software 
+
+
+
+### Instalar librería de Makeblock
+
+## Instalar librería de PLC *industrialshields*
+Algunas placas requieren la instalación de librerías adicionales, para ello vamos a ala pestaña preferencias y donde pone placas adicionales “Additional boards manager URLs”, metmos la dirección de enlace del distribuidor de la placa, por ejemplo esta de <http://apps.industrialshields.com/main/arduino/boards/package_industrialshields_index.json>.
+
+Una vez tenemos la placa metida en la IDE para seleccionarla vamos a Herramientas--> Boards --> “Boards Manager” y seleccionamos la placa o librería que hemos instalado.
+
+
+# CONECTAR UNA PLACA ARDUINO AL ORDENADOR
+
+Lo primero es conectar nuestra placa arduino al ordenador para poder programarlo.
+Las placas más estandar son arduino mega, arduino leonardo y la más básica arduino UNO..
+
+Para alimentar las placas es conveniente hacerlo a 7 voltios, aunque pongan 12, con 12 se calientan mucho.Lo normal es conectarla al usb del PC directamente por alguno de los puertos que tiene cada placa. Así la arduino leonardo usa un puerto micro USB de alimentacion y la mega el  puerto USB tipo B.
+
+Una vez conectadas al PC abrimos el IDE arduino y conectamos. Dentro del programa seleccionaremos la placa en el programa y despues el puerto.. en windows lo detecta automáticamente y nos lo pone en puertos.
+
+Ahora ya podemos programar o abrir un ejemplo de programa de los multiplos que vienen en el IDE.
+
+Abierto el programa hay que validar, y despues ya se puede mandarel programa a la placa. Antes lo compila y despues lo manda a la placa a través del puerto serie (durante el proceso los led de la placa brillan).
+
+<https://www.industrialshields.com/>
+
+# PROGRAMAR EN ARDUINO
+
+Los comentarios son con barra y asterisco.
+Cada programa empieza declarando las librerías necesarioas.
+
+Hay dos bloques básicos el de setup que confgura las entradas y salidas .
+Y el loop, o nucleo del programa que es lo que se repite en la placa de forma constante.
